@@ -8,8 +8,6 @@ module.exports = function(source, inputSourceMap) {
         this.cacheable();
     }
 
-    //var opts = this.options['uglify-loader'] || {};
-    // Using custom Options
     var opts = {
             compress: {
                 properties: false,
@@ -26,9 +24,8 @@ module.exports = function(source, inputSourceMap) {
                 quote_style: 3
             }
         };
-    
-    var result = UglifyJS.minify(source, opts);
-    
+
+
     // just an indicator to generate source maps, the output result.map will be modified anyway
     // tell UglifyJS2 not to emit a name by just setting outSourceMap to true
     opts.outSourceMap = true;
